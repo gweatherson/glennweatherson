@@ -1,0 +1,173 @@
+@import "reset";
+@import "settings";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTwo {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+	background-color: $background;
+	color: $body;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	padding: 20px;
+
+	@media (min-width: 768px) {
+	  padding: 100px 100px 40px 100px;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.row {
+	margin-bottom: 100px;
+
+	&:nth-of-type(2) {
+		display: flex;
+		flex-direction: column-reverse;
+
+		@media (min-width: 768px) {
+			flex-direction: row;
+		}
+	}
+
+	@media (min-width: 768px) {
+		display: flex;
+		align-items: center;
+		margin-bottom: 120px;
+	}
+
+	&:last-of-type {
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+
+	&__column {
+		flex-basis: 50%;
+		width: 100%;
+
+		&:first-of-type {
+			padding-right: 0;
+
+			@media (min-width: 768px) {
+				padding-right: 80px;
+			}
+		}
+	}
+
+}
+
+.intro {
+
+	&__sub-title {
+		color: $red;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 13px;
+		text-align: left;
+		animation: .4s ease-out 0s 1 slideIn;
+		margin-bottom: 20px;
+
+		@media (min-width: 768px) {
+			text-align: right;
+		}
+
+		&.\--left {
+			text-align: left;
+		}
+	}
+
+	&__title {
+		font-size: 30px;
+		text-align: left;
+		margin-bottom: 0;
+		margin-top: -20px;	
+		animation: .4s ease-out 0s 1 slideInTwo;
+
+		@media (min-width: 768px) {
+			font-size: 40px;
+			text-align: right;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__description {
+		text-align: left;
+		margin-bottom: 10px;
+
+		@media (min-width: 768px) {
+			text-align: right;
+			margin-bottom: 20px;
+		}
+
+		&.\--left {
+			text-align: left;
+		}
+	}	
+
+}
+
+.elsewhere {
+
+	&__title {
+		color: $red;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: block;
+		font-size: 13px;
+	}
+
+	&__links {
+		display: flex;
+
+		a {
+			padding: 6px;
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+		}
+
+	}
+
+}
+
+a {
+	color: $red;
+	text-decoration: none;
+	transition: color .3s;
+
+	&:hover {
+		color: #6b161f;
+		transition: color .3s;
+	}
+}
+
+img {
+	max-width: 100%;
+	width: 100%;
+}
